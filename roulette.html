@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="kos">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="./roulette.css" />
+    <title>Document</title>
+  
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin:0;
+            padding:0;
+        }
+
+        .festival {
+            position: fixed;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+
+            background: black;
+        }
+        .festival > .firecracker {
+            font-size: 15px;  
+
+            width:1em;
+            height:1em;
+
+            background: rgba(255, 255, 255, 0.5);
+
+            position: absolute;
+            
+            border-radius: 50%;
+
+            /* 8방향 그림자 */
+            box-shadow: 
+                0 0 0 0 #FCFFA6,
+                0 0 0 0 #C1FFD7,
+                0 0 0 0 #B5DEFF,
+                0 0 0 0 #CAB8FF,
+                0 0 0 0 #B5EAEA,
+                0 0 0 0 #EDF6E5,
+                0 0 0 0 #FFBCBC,    
+                0 0 0 0 #F38BA0
+                ;
+
+            transition-property: box-shadow;
+            transition-duration: 2s;
+            transition-timing-function: eaes-out;
+        }
+
+        .festival > .firecracker.boom {
+            background:rgba(0, 0, 0, 0);
+
+            /* 8방향 그림자 */
+            box-shadow: 
+                5em 0 1em 0 #FCFFA6,
+                -5em 0 1em 0 #B5DEFF,
+                0 5em 1em 0 #CAB8FF,
+                0 -5em 1em 0 #B5EAEA,
+                3.5em 3.5em 1em 0 #C1FFD7,
+                3.5em -3.5em 1em 0 #EDF6E5,
+                -3.5em 3.5em 1em 0 #FFBCBC,    
+                -3.5em -3.5em 1em 0 #F38BA0
+                ;
+        }
+
+        .happy-new-year {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+
+            color: white;
+
+            font-family: 'Permanent Marker', cursive;
+            font-size: 120px;
+            white-space: nowrap;
+            text-align: center;
+
+            padding: 0.25em;
+
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+            -webkit-background-clip: text;
+
+            background-color: rgb(255,255,255);
+            background-image: linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,222,0,1) 50%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+            background-size: 500%;
+            background-position: 0 0;
+
+            animation: blingbling 2s ease-in-out infinite;
+        }
+
+        @keyframes blingbling {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 0;
+            }
+        }
+
+        @media screen and (max-width:1000px){
+            .happy-new-year {
+                font-size: 75px;
+            }
+        }
+        @media screen and (max-width:640px){
+            .happy-new-year {
+                font-size: 50px;
+                white-space: pre-wrap;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <!-- 룰렛 -->
+    <div class="wrapper">
+      <div class="title-div">
+        <h1></h1>
+      </div>
+      <div class="spinBtn-div">
+        <input type="button" value="START" id="spin" class="spin-btn"/>
+      </div>
+      
+      <div class="roulette-div" style = "position : relative">
+        <img class="han" style="position:absolute;width: 15em;/* margin: 0 auto; */margin: 16em;/* top:25%; *//* left:25%; */" src="./asset/hankuke.jpg">
+        <canvas id="canvas" width="750" height="750"></canvas>
+      </div>
+      <div class="moveBtn-div">
+        <button id="moveSlot" class="moveSlot" onclick="moveSlot()">
+          슬롯머신으로 이동
+        </button>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./congratuation.js"></script> 
+
+    <div class="festival" id = "cong" style="visibility: hidden">
+      <div id = "in_name" class="happy-new-year">000님<br>축하합니다!</div>
+    </div>
+
+    <script src="./roulette.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="./slot.css" />
+  </head>
+  <body> 
+    <div class="wrapper">
+      <div id="res-div" class="res-div">
+        <h2>🎁 당첨자</h2>
+        <div id="res_list" class="res_list">
+        </div>
+      </div>
+      <div class="div2">
+        <h2 class="div2-title">만든이: FY2022 하반기 디지털본부 신입사원</h2>
+        <div class="div2-slot">
+          <div id="slot_box1">
+            <ul id="list"></ul>
+          </div>
+          <div id="slot_box2">
+            <ul id="list"></ul>
+          </div>
+          <div class="div2-text"><br>이신 분!!</div>
+          <button id="slot_btn" class="btn_t">GO ➡️</button>
+        </div>
+        <div class="div2-btns">
+          <div class="btns-one">
+          <button id="btn_r" class="btn_r">Click!</button>
+        </div>
+        <div class="btns-two">
+          <button id="btn_s" class="btn_s">Click!</button>
+        </div>
+        </div>
+      </div>
+      <div class="div2-moveBtn">
+        <button id="moveRoulette" class="moveRoulette" onclick="location.href='roulette.html'">
+          돌림판 이동
+        </button>
+      </div>
+    </div>
+
+    <script src="./slot.js"></script>
+  </body>
+</html>

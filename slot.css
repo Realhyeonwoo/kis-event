@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  position: relative;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* 슬라이더 기본 위치 */
+#list {
+  position: relative;
+  margin-top: -250px;
+}
+
+#list li {
+  width: 100%;
+  height: 250px;
+  list-style: none;
+}
+
+#list img {
+  border: 1px solid;
+}
+
+.active {
+  background-color: yellow;
+}
+
+#list li {
+  /* background: url("https://farm2.staticflickr.com/1473/23990834744_4db21b01d9_c.jpg"); */
+  background-size: 800px 793px;
+  /* height: 100px; */
+}
+
+#list li[data-roll="1"] {
+  background-position: 0 0;
+}
+
+#list li[data-roll="2"] {
+  background-position: -276px 0px;
+}
+
+#list li[data-roll="3"] {
+  background-position: -551px 0px;
+}
+
+#list li[data-roll="4"] {
+  background-position: 0px -273px;
+}
+
+#list li[data-roll="5"] {
+  background-position: -276px -273px;
+}
+
+#list li[data-roll="6"] {
+  background-position: -551px -273px;
+}
+
+#list li[data-roll="7"] {
+  background-position: -276px -545px;
+}
+
+#list li[data-roll="8"] {
+  background-position: -551px -545px;
+}
+
+#slot_box1>#list {
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-align: center;
+}
+#slot_box2>#list {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+/* ================================================*/
+/* 화면 전첵적인 틀 */
+.wrapper {
+  /* border: 4px solid red; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('./asset/slotImg.jpg');
+  background-repeat: repeat;
+  background-size: 10%;
+}
+
+.res-div {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 3rem;
+  margin: 0 3rem;
+  display: none;
+}
+
+.div2 {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 10vh 10%;
+  background-color: black;
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem;
+}
+
+.div2-moveBtn {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 10vh;
+}
+
+/* ================================================*/
+/* 당첨자 리스트 */
+.res-div>h2 {
+  font-family: neon;
+  color: #FB4264;
+  line-height: 6vw;
+  text-shadow: 0 0 3vw #F40A35;
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.res_list>span {
+  background-color: yellow;
+  padding: .3rem 2rem;
+  border-radius: 1.3rem;
+  font-weight: bold;
+  margin: .1rem 1rem;
+  position: relative;
+  font-size: 1.5vw;
+  /* left: 100px;
+  top: 0; */
+  animation: ball 1s ease-in infinite alternate;
+}
+@keyframes ball {
+  0% {
+    top: 10px;
+  }
+  95% {
+    width: 10px;
+  }
+  100% {
+    top: 30px;
+  }
+}
+
+/* ================================================*/
+/* 슬롯머신*/
+.div2-slot {
+  display: flex;
+}
+
+#slot_box1 {
+  background: white;
+  margin-right: 0.5rem;
+  position: relative;
+  width: 250px;
+  /* height: 250px; */
+  height: 100px;
+  border: 5px solid gray;
+  overflow: hidden;
+  display: inline-block;
+  flex: 1;
+}
+#slot_box2 {
+  background: white;
+  margin-right: 0.5rem;
+  position: relative;
+  width: 250px;
+  /* height: 250px; */
+  height: 100px;
+  border: 5px solid gray;
+  overflow: hidden;
+  display: inline-block;
+  flex: .7;
+}
+
+.div2-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn_t {
+  position: relative;
+  width: 40px;
+  height: 100px;
+  border: 2px solid;
+  overflow: hidden;
+  display: inline-block;
+  flex: .5;
+  background: #0A6699;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  margin-left: 5%;
+  border: 4px solid white;
+}
+
+.btn_t:hover {
+  background: #fff;
+  box-shadow: 0px 2px 20px 10px #97B1BF;
+  color: #0A6699;
+}
+
+.btns-one {
+  width: 50%;
+  flex: 1.25
+}
+.btns-two {
+  width: 50%;
+  flex: 2
+}
+
+.btn_r,
+.btn_s {
+  background: #0A6699;
+  color: #fff;
+  /* padding: 1.3rem 4rem; */
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  width: 100px;
+  padding: 10px;
+
+}
+
+.btn_r:hover {
+  background: #fff;
+  box-shadow: 0px 2px 20px 10px #97B1BF;
+  color: #0A6699;
+}
+
+.btn_s:hover {
+  background: #fff;
+  box-shadow: 0px 2px 20px 10px #97B1BF;
+  color: #0A6699;
+}
+
+.div2-btns {
+  text-align: left;
+  padding-top: 10px;
+  display: flex;
+}
+
+.div2-title {
+  display: inline-block;
+  color: skyblue;
+  border-bottom: 3px solid white;
+  margin-bottom: 9px;
+  /* background-color: white;
+  border-radius: 1.5rem;
+  padding-top: .3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem; */
+}
+
+/* ================================================*/
+/* 돌림판 이동 버튼*/
+
+.moveRoulette {
+  background: #83acdd;
+  width: 200px;
+  box-shadow: 2px 2px 3px #C8BBA3;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 15px 10px;
+  color: #FFF;
+  cursor: pointer;
+  height: 100%;
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  display: none;
+}
+
+.div2-home {
+  text-align: right;
+}
+
+.move-home {
+  width: 6%;
+}

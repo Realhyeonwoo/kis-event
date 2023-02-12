@@ -1,0 +1,83 @@
+/* ================================================*/
+/* 화면 전첵적인 틀 */
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-div {
+  /* background-color: blue; */
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.spinBtn-div {
+  /* background-color: red; */
+  display: table-cell;
+  vertical-align: middle;
+  height: 8vh;
+  text-align: center;
+}
+
+.roulette-div {
+  /* background-color: green; */
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.moveBtn-div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: -8%;
+  z-index: 9999;
+}
+
+/* ================================================*/
+/* START 버튼 */
+.spin-btn {
+  background: #0A6699;
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 30%;
+  height: 100%;
+  /* padding-left: 5%;
+  padding-right: 5%; */
+  /* text-align: center; */
+}
+
+.spin-btn:hover {
+  background: #fff;
+  box-shadow: 0px 2px 20px 10px #97B1BF;
+  color: #0A6699;
+}
+
+/* ================================================*/
+/* 슬롯으로 이동 버튼*/
+
+.moveSlot {
+  background: #83acdd;
+  width: 300px;
+  box-shadow: 2px 2px 3px #C8BBA3;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 15px 10px;
+  color: #FFF;
+  cursor: pointer;
+  height: 100%;
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  display: none;
+  z-index: 9999;
+}
